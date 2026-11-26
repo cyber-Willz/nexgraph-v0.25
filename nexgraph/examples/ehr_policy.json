@@ -1,0 +1,20 @@
+{
+  "min_cell": 11,
+  "min_cell_up_to": "reader",
+  "pseudonym_key_hex": "REPLACE-WITH-64-RANDOM-HEX-DIGITS-kept-outside-the-database-0000000000",
+  "summary_procedures": [],
+  "rules": [
+    {
+      "up_to": "writer",
+      "deny": ["Stay.hospitalid", "Stay.wardid"],
+      "deny_labels": ["Note"],
+      "mask": {
+        "uniquepid": "pseudonym",
+        "patienthealthsystemstayid": "pseudonym",
+        "age": "top_code:89",
+        "admissionweight": "bucket:5",
+        "hospitaladmittime24": "redact"
+      }
+    }
+  ]
+}

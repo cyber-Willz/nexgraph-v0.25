@@ -1,0 +1,8 @@
+[build]
+target = "index.html"
+dist = "dist"
+
+# `trunk serve` forwards API calls to nexgraph-server. For local development run the server with
+# `--insecure-http --listen 127.0.0.1:8443`; for a TLS dev server use https:// and add `insecure = true`.
+[[proxy]]
+backend = "http://127.0.0.1:8443/v1/"

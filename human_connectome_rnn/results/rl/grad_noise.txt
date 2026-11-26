@@ -1,0 +1,10 @@
+probing at initialisation
+estimator (batch 24)               cos to BPTT (m+-sd) cos after averaging 8 batches
+dense, mean-action baseline            0.838 +- 0.441            0.960
+dense, phase baseline                  0.893 +- 0.167            0.965
+sparse, phase baseline                 0.493 +- 0.522            0.541
+supervised pre-training: 500 steps, held-out error 44.3 deg
+estimator (batch 24)               cos to BPTT (m+-sd) cos after averaging 8 batches
+dense, mean-action baseline            0.719 +- 0.331            0.846
+dense, phase baseline                  0.587 +- 0.442            0.718
+sparse, phase baseline                 0.581 +- 0.345            0.907

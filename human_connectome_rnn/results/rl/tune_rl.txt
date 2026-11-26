@@ -1,0 +1,27 @@
+## lr=0.006 sigma=0.3->0.1 phase dense 1500 steps seeds 101-102
+[connectome seed 101] err 45.4
+[connectome seed 102] err 3.3
+connectome            17.62    1.062   0.431   24.4 +- 29.8         1/2       83%     35.0
+## lr=0.006 sigma=0.2->0.05 phase dense 1500 steps seeds 101-102
+[connectome seed 101] err 5.7
+[connectome seed 102] err 3.7
+connectome            17.62    1.062   0.431    4.7 +- 1.4          0/2       76%     35.0
+## lr=0.006 sigma=0.5->0.2 phase dense 1500 steps seeds 101-102
+[connectome seed 101] err 6.6
+[connectome seed 102] err 5.8
+connectome            17.62    1.062   0.431    6.2 +- 0.5          0/2       79%     33.6
+## lr=0.012 sigma=0.3->0.1 phase dense 1500 steps seeds 101-102
+[connectome seed 101] err 93.0
+[connectome seed 102] err 8.3
+connectome            17.62    1.062   0.431   50.6 +- 59.9         1/2       59%     33.2
+## lr=0.012 sigma=0.2->0.05 phase dense 1500 steps seeds 101-102
+[connectome seed 101] err 93.0
+[connectome seed 102] err 5.8
+connectome            17.62    1.062   0.431   49.4 +- 61.7         1/2       40%     34.5
+## lr=0.012 sigma=0.5->0.2 phase dense 1500 steps seeds 101-102
+[connectome seed 101] err 91.8
+[connectome seed 102] err 86.5
+connectome            17.62    1.062   0.431   89.2 +- 3.7          2/2       41%     33.7
+## supervised reference lr=0.006 1000 steps seeds 101-102
+connectome            17.62    1.062   0.431    4.7 +- 2.4          0/2       77%     12.5
+DONE

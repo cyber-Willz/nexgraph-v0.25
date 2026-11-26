@@ -1,0 +1,2 @@
+## C2_lstm_rl_2000 :: --seeds 4 --steps 2000 --model lstm --algo rl --baseline phase
+connectome            17.62    1.062   0.431    5.8 +- 2.3          0/4       57%    174.5

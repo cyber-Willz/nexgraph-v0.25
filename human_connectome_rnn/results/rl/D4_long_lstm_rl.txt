@@ -1,0 +1,2 @@
+## D4_long_lstm_rl :: --seeds 4 --steps 2000 --delay-min 50 --delay-max 90 --model lstm --algo rl --baseline phase
+connectome            17.62    1.062   0.431   42.8 +- 10.1         2/4       65%    265.4

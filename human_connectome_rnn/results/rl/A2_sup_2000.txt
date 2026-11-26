@@ -1,0 +1,2 @@
+## A2_sup_2000 :: --modes connectome --steps 2000
+connectome            17.62    1.062   0.431    2.0 +- 0.7          0/8       79%     43.4

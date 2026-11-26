@@ -1,0 +1,2 @@
+## B2_hybrid :: --seeds 8 --steps 2000 --algo rl --baseline phase --pretrain 300
+connectome            17.62    1.062   0.431   10.5 +- 14.5         1/8       75%     61.8

@@ -1,0 +1,4 @@
+### a
+CALL spectral.nb_radius();
+### b
+CALL spectral.nb_radius(true);

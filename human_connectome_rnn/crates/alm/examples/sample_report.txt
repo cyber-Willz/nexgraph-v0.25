@@ -1,0 +1,46 @@
+ALM REPORT: Sample community bank (USD m, fictional)
+==============================================================================
+Book: assets 1000.0  liabilities 910.0  equity 90.0   |  PV: assets 1000.0  liabilities 910.0  EVE 90.0
+
+RATE RISK
+  duration  assets 4.58y  liabilities 2.47y  gap +2.34y
+  DV01      assets 0.458  liabilities 0.225  EVE +0.234  (value change per -1bp)
+  convexity assets 51.4  liabilities 19.4
+  key-rate EVE DV01: 0.08y:+0.001 0.25y:+0.069 0.50y:+0.005 1.00y:-0.021 2.00y:-0.019 3.00y:+0.042 5.00y:-0.012 7.00y:-0.009 10.00y:+0.074 20.00y:+0.095 30.00y:+0.009
+
+SCENARIO             EVE      dEVE   %equity       NII      dNII    dNII%
+base                90.0      +0.0      0.0%     39.50     +0.00     0.0%
+parallel up         49.3     -40.7    -45.2%     38.86     -0.63    -1.6%
+parallel down      144.4     +54.4     60.4%     40.13     +0.64     1.6%
+steepener           85.8      -4.2     -4.6%     40.18     +0.68     1.7%
+flattener           88.0      -2.0     -2.3%     38.69     -0.80    -2.0%
+short up            74.5     -15.5    -17.2%     38.54     -0.95    -2.4%
+short down         106.3     +16.3     18.1%     40.46     +0.96     2.4%
+
+LIQUIDITY
+  LCR 279%  (HQLA 294.0 = L1 260.0 + L2A 34.0 + L2B 0.0 before caps; net 30d outflow 105.4)
+  survival horizon (contractual run-off, no roll-over): 24 months
+  bucket      inflow   outflow       net cumulative
+  <=1m          87.2      13.1     +74.1      +74.1
+  1-3m          13.9      25.5     -11.6      +62.4
+  3-6m          20.8      96.5     -75.7      -13.2
+  6-12m         41.3     235.8    -194.5     -207.8
+  1-3y         364.5     255.6    +108.9      -98.9
+  3-5y         156.3     144.9     +11.4      -87.4
+  >5y          820.2     196.9    +623.3     +535.9
+
+EXPOSURE NETWORK (spectral hypergraph + Arnoldi)
+  15 instruments, 9 hyperedges, algebraic connectivity 0.0973
+  contagion radius 0.209 (shocks decay), funding-shock amplification x1.16
+  HHI funding 0.201  assets 0.218
+  cluster 0: assets 330.0 / liabilities 430.0 (imbalance -0.13, mostly deposit_savings): gov_bond_3y, corp_bonds_5y, consumer_loans, sme_loans_fixed, savings_deposits, term_deposits_24m, corporate_deposits, sub_debt_5y
+  cluster 1: assets 280.0 / liabilities 230.0 (imbalance +0.10, mostly cre): cash_reserves, cre_loans_floating, term_deposits_12m, wholesale_6m
+  cluster 2: assets 390.0 / liabilities 250.0 (imbalance +0.22, mostly mortgage): gov_bond_10y, resi_mortgages, demand_deposits
+
+LIMITS
+  [BREACH] EVE loss, worst scenario (share of book equity)      0.452  (limit 0.150)
+  [ok] NII loss, worst scenario (share of base NII)         0.024  (limit 0.100)
+  [ok] LCR (minimum)                                        2.789  (limit 1.000)
+  [BREACH] |duration gap| (years)                               2.339  (limit 2.000)
+  [ok] contagion spectral radius                            0.209  (limit 0.850)
+  [ok] funding concentration (HHI)                          0.201  (limit 0.350)

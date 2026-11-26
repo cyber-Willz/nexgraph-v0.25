@@ -1,0 +1,9 @@
+[package]
+name = "crypto_bench"
+version = "0.1.0"
+edition = "2021"
+[workspace]
+[dependencies]
+nexgraph = { path = "../..", features = ["nonbacktracking"] }
+[profile.release]
+opt-level = 3

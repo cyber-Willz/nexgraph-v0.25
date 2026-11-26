@@ -1,0 +1,16 @@
+[real connectome seed 1] err 3.3
+[real connectome seed 2] err 4.6
+[real connectome seed 3] err 2.7
+[real connectome seed 4] err 4.3
+[spectral replica (held-out) seed 1] err 2.3
+[spectral replica (held-out) seed 2] err 4.2
+[spectral replica (held-out) seed 3] err 3.0
+[spectral replica (held-out) seed 4] err 5.0
+[distance rule (held-out) seed 1] err 4.3
+[distance rule (held-out) seed 2] err 3.4
+[distance rule (held-out) seed 3] err 3.0
+[distance rule (held-out) seed 4] err 4.7
+[random, density-matched seed 1] err 1.9
+[random, density-matched seed 2] err 1.5
+[random, density-matched seed 3] err 1.5
+[random, density-matched seed 4] err 2.1

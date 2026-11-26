@@ -1,0 +1,2 @@
+## B1_rl_sparse_phase :: --seeds 8 --steps 2000 --algo rl --reward sparse --baseline phase
+connectome            17.62    1.062   0.431   44.6 +- 33.4         5/8       62%     62.9

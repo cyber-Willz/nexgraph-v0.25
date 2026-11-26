@@ -1,0 +1,2 @@
+## A4_rl_dense_mean :: --modes connectome --steps 2000 --algo rl --baseline mean-action
+connectome            17.62    1.062   0.431    3.6 +- 1.7          0/8       71%     64.4

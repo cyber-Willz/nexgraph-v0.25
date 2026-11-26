@@ -1,0 +1,2 @@
+## D2_long_rnn_rl :: --seeds 4 --steps 3000 --delay-min 50 --delay-max 90 --algo rl --baseline phase
+connectome            17.62    1.062   0.431   88.9 +- 2.4          4/4       69%    144.6

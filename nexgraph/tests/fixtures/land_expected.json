@@ -1,0 +1,2015 @@
+[
+ {
+  "nql": "CALL land.rule_check('PARCEL','Record Status=Active','Tahsildar Approval Status=Approved') YIELD *",
+  "where": {
+   "group": "ALL"
+  },
+  "expect": {
+   "records": 1000,
+   "applicable": 328,
+   "violations": 211,
+   "unknown": 0,
+   "violation_rate": 0.6432926829268293,
+   "wilson_low": 0.5900673712740844,
+   "wilson_high": 0.6932004287592791
+  }
+ },
+ {
+  "nql": "CALL land.rule_check('PARCEL','Record Status=Active','Tahsildar Approval Status=Approved','District') YIELD *",
+  "where": {
+   "group": "Coimbatore"
+  },
+  "expect": {
+   "records": 181,
+   "applicable": 58,
+   "violations": 37,
+   "unknown": 0,
+   "violation_rate": 0.6379310344827587,
+   "wilson_low": 0.509275237048117,
+   "wilson_high": 0.7494508717002409
+  }
+ },
+ {
+  "nql": "CALL land.rule_check('PARCEL','Record Status=Active','Tahsildar Approval Status=Approved','District') YIELD *",
+  "where": {
+   "group": "Erode"
+  },
+  "expect": {
+   "records": 216,
+   "applicable": 77,
+   "violations": 48,
+   "unknown": 0,
+   "violation_rate": 0.6233766233766234,
+   "wilson_low": 0.5117280371207936,
+   "wilson_high": 0.7232998839134109
+  }
+ },
+ {
+  "nql": "CALL land.rule_check('PARCEL','Record Status=Active','Tahsildar Approval Status=Approved','District') YIELD *",
+  "where": {
+   "group": "Madurai"
+  },
+  "expect": {
+   "records": 192,
+   "applicable": 69,
+   "violations": 51,
+   "unknown": 0,
+   "violation_rate": 0.7391304347826086,
+   "wilson_low": 0.6248942554937958,
+   "wilson_high": 0.8281444471114402
+  }
+ },
+ {
+  "nql": "CALL land.rule_check('PARCEL','Record Status=Active','Tahsildar Approval Status=Approved','District') YIELD *",
+  "where": {
+   "group": "Salem"
+  },
+  "expect": {
+   "records": 212,
+   "applicable": 62,
+   "violations": 39,
+   "unknown": 0,
+   "violation_rate": 0.6290322580645161,
+   "wilson_low": 0.5045796412346053,
+   "wilson_high": 0.7384283401585889
+  }
+ },
+ {
+  "nql": "CALL land.rule_check('PARCEL','Record Status=Active','Tahsildar Approval Status=Approved','District') YIELD *",
+  "where": {
+   "group": "Trichy"
+  },
+  "expect": {
+   "records": 199,
+   "applicable": 62,
+   "violations": 36,
+   "unknown": 0,
+   "violation_rate": 0.5806451612903226,
+   "wilson_low": 0.4566558474484658,
+   "wilson_high": 0.6952241409222806
+  }
+ },
+ {
+  "nql": "CALL land.rule_check('PARCEL','Record Status=Under Dispute','Tahsildar Approval Status!=Approved','District') YIELD *",
+  "where": {
+   "group": "Coimbatore"
+  },
+  "expect": {
+   "records": 181,
+   "applicable": 60,
+   "violations": 20,
+   "unknown": 0,
+   "violation_rate": 0.3333333333333333,
+   "wilson_low": 0.2272926152352268,
+   "wilson_high": 0.4594313354788031
+  }
+ },
+ {
+  "nql": "CALL land.rule_check('PARCEL','Record Status=Under Dispute','Tahsildar Approval Status!=Approved','District') YIELD *",
+  "where": {
+   "group": "Erode"
+  },
+  "expect": {
+   "records": 216,
+   "applicable": 64,
+   "violations": 21,
+   "unknown": 0,
+   "violation_rate": 0.328125,
+   "wilson_low": 0.22570557904469185,
+   "wilson_high": 0.45000894150908505
+  }
+ },
+ {
+  "nql": "CALL land.rule_check('PARCEL','Record Status=Under Dispute','Tahsildar Approval Status!=Approved','District') YIELD *",
+  "where": {
+   "group": "Madurai"
+  },
+  "expect": {
+   "records": 192,
+   "applicable": 59,
+   "violations": 19,
+   "unknown": 0,
+   "violation_rate": 0.3220338983050847,
+   "wilson_low": 0.21687575241885632,
+   "wilson_high": 0.44894995573474633
+  }
+ },
+ {
+  "nql": "CALL land.rule_check('PARCEL','Record Status=Under Dispute','Tahsildar Approval Status!=Approved','District') YIELD *",
+  "where": {
+   "group": "Salem"
+  },
+  "expect": {
+   "records": 212,
+   "applicable": 72,
+   "violations": 25,
+   "unknown": 0,
+   "violation_rate": 0.3472222222222222,
+   "wilson_low": 0.2475342300827512,
+   "wilson_high": 0.4623869615439442
+  }
+ },
+ {
+  "nql": "CALL land.rule_check('PARCEL','Record Status=Under Dispute','Tahsildar Approval Status!=Approved','District') YIELD *",
+  "where": {
+   "group": "Trichy"
+  },
+  "expect": {
+   "records": 199,
+   "applicable": 77,
+   "violations": 16,
+   "unknown": 0,
+   "violation_rate": 0.2077922077922078,
+   "wilson_low": 0.13215077794236724,
+   "wilson_high": 0.31120414592399037
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-1"
+  },
+  "expect": {
+   "records": 24,
+   "hits": 9,
+   "rate": 0.375,
+   "overall_rate": 0.332,
+   "wilson_low": 0.21159367559548775,
+   "wilson_high": 0.5729003755732573,
+   "z": 0.4473184417469957,
+   "p_value": 0.6546451534365173
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-10"
+  },
+  "expect": {
+   "records": 19,
+   "hits": 10,
+   "rate": 0.5263157894736842,
+   "overall_rate": 0.332,
+   "wilson_low": 0.3170780924511317,
+   "wilson_high": 0.7267019483882043,
+   "z": 1.79857113326763,
+   "p_value": 0.07208654704816135
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-11"
+  },
+  "expect": {
+   "records": 14,
+   "hits": 7,
+   "rate": 0.5,
+   "overall_rate": 0.332,
+   "wilson_low": 0.2679920245241364,
+   "wilson_high": 0.7320079754758636,
+   "z": 1.3347994728732204,
+   "p_value": 0.18194198607390144
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-12"
+  },
+  "expect": {
+   "records": 18,
+   "hits": 3,
+   "rate": 0.16666666666666666,
+   "overall_rate": 0.332,
+   "wilson_low": 0.05836576805861446,
+   "wilson_high": 0.39222038103915735,
+   "z": -1.4894962056631578,
+   "p_value": 0.13635675175924847
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-13"
+  },
+  "expect": {
+   "records": 25,
+   "hits": 5,
+   "rate": 0.2,
+   "overall_rate": 0.332,
+   "wilson_low": 0.08860584686802575,
+   "wilson_high": 0.39130950369540335,
+   "z": -1.4014792189520036,
+   "p_value": 0.16107081756653763
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-14"
+  },
+  "expect": {
+   "records": 21,
+   "hits": 5,
+   "rate": 0.23809523809523808,
+   "overall_rate": 0.332,
+   "wilson_low": 0.1062801302263647,
+   "wilson_high": 0.45091173682950747,
+   "z": -0.9137765110064322,
+   "p_value": 0.3608342912645991
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-15"
+  },
+  "expect": {
+   "records": 23,
+   "hits": 10,
+   "rate": 0.43478260869565216,
+   "overall_rate": 0.332,
+   "wilson_low": 0.25634635325674204,
+   "wilson_high": 0.6318862491498354,
+   "z": 1.0467097777478165,
+   "p_value": 0.29523345273003987
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-16"
+  },
+  "expect": {
+   "records": 24,
+   "hits": 10,
+   "rate": 0.4166666666666667,
+   "overall_rate": 0.332,
+   "wilson_low": 0.2446760260981176,
+   "wilson_high": 0.6116533413477124,
+   "z": 0.8807665442150152,
+   "p_value": 0.37844419119944106
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-17"
+  },
+  "expect": {
+   "records": 25,
+   "hits": 8,
+   "rate": 0.32,
+   "overall_rate": 0.332,
+   "wilson_low": 0.17205190306907986,
+   "wilson_high": 0.5158973072689776,
+   "z": -0.12740720172290954,
+   "p_value": 0.8986181165432083
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-18"
+  },
+  "expect": {
+   "records": 15,
+   "hits": 7,
+   "rate": 0.4666666666666667,
+   "overall_rate": 0.332,
+   "wilson_low": 0.24809535365737387,
+   "wilson_high": 0.698830199745016,
+   "z": 1.1075120670318093,
+   "p_value": 0.2680725980148677
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-19"
+  },
+  "expect": {
+   "records": 18,
+   "hits": 4,
+   "rate": 0.2222222222222222,
+   "overall_rate": 0.332,
+   "wilson_low": 0.09000928108601694,
+   "wilson_high": 0.45214584316212625,
+   "z": -0.988993448383871,
+   "p_value": 0.3226663471524236
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-2"
+  },
+  "expect": {
+   "records": 15,
+   "hits": 4,
+   "rate": 0.26666666666666666,
+   "overall_rate": 0.332,
+   "wilson_low": 0.10897453325692374,
+   "wilson_high": 0.5195043405598057,
+   "z": -0.537307834500581,
+   "p_value": 0.5910549946390249
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-20"
+  },
+  "expect": {
+   "records": 13,
+   "hits": 2,
+   "rate": 0.15384615384615385,
+   "overall_rate": 0.332,
+   "wilson_low": 0.04325817835808121,
+   "wilson_high": 0.4223463101948254,
+   "z": -1.3639850360667605,
+   "p_value": 0.1725722753201141
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-21"
+  },
+  "expect": {
+   "records": 19,
+   "hits": 5,
+   "rate": 0.2631578947368421,
+   "overall_rate": 0.332,
+   "wilson_low": 0.11806412346782505,
+   "wilson_high": 0.48791550897815106,
+   "z": -0.6371969237037003,
+   "p_value": 0.5239965812468914
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-22"
+  },
+  "expect": {
+   "records": 19,
+   "hits": 7,
+   "rate": 0.3684210526315789,
+   "overall_rate": 0.332,
+   "wilson_low": 0.1914951274513508,
+   "wilson_high": 0.5896046683519693,
+   "z": 0.33711029908483175,
+   "p_value": 0.7360337538461228
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-23"
+  },
+  "expect": {
+   "records": 13,
+   "hits": 4,
+   "rate": 0.3076923076923077,
+   "overall_rate": 0.332,
+   "wilson_low": 0.12680703655710512,
+   "wilson_high": 0.5763065681945096,
+   "z": -0.18610503946334037,
+   "p_value": 0.8523623900349315
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-24"
+  },
+  "expect": {
+   "records": 20,
+   "hits": 6,
+   "rate": 0.3,
+   "overall_rate": 0.332,
+   "wilson_low": 0.14547724486760433,
+   "wilson_high": 0.5189728183535234,
+   "z": -0.3038839081338176,
+   "p_value": 0.7612163378575183
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-25"
+  },
+  "expect": {
+   "records": 32,
+   "hits": 5,
+   "rate": 0.15625,
+   "overall_rate": 0.332,
+   "wilson_low": 0.06864420282505708,
+   "wilson_high": 0.31754149597530396,
+   "z": -2.111120630204032,
+   "p_value": 0.034761944625465294
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-26"
+  },
+  "expect": {
+   "records": 20,
+   "hits": 6,
+   "rate": 0.3,
+   "overall_rate": 0.332,
+   "wilson_low": 0.14547724486760433,
+   "wilson_high": 0.5189728183535234,
+   "z": -0.3038839081338176,
+   "p_value": 0.7612163378575183
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-27"
+  },
+  "expect": {
+   "records": 23,
+   "hits": 10,
+   "rate": 0.43478260869565216,
+   "overall_rate": 0.332,
+   "wilson_low": 0.25634635325674204,
+   "wilson_high": 0.6318862491498354,
+   "z": 1.0467097777478165,
+   "p_value": 0.29523345273003987
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-28"
+  },
+  "expect": {
+   "records": 16,
+   "hits": 6,
+   "rate": 0.375,
+   "overall_rate": 0.332,
+   "wilson_low": 0.18481232558863633,
+   "wilson_high": 0.6135895945449727,
+   "z": 0.36523397827234017,
+   "p_value": 0.7149367566435532
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-29"
+  },
+  "expect": {
+   "records": 21,
+   "hits": 7,
+   "rate": 0.3333333333333333,
+   "overall_rate": 0.332,
+   "wilson_low": 0.1719475260508348,
+   "wilson_high": 0.5462654802574476,
+   "z": 0.012974514355060552,
+   "p_value": 0.9896481257486708
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-3"
+  },
+  "expect": {
+   "records": 17,
+   "hits": 5,
+   "rate": 0.29411764705882354,
+   "overall_rate": 0.332,
+   "wilson_low": 0.1327998961029523,
+   "wilson_high": 0.5313311006653985,
+   "z": -0.33166842892955706,
+   "p_value": 0.7401396425330199
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-30"
+  },
+  "expect": {
+   "records": 23,
+   "hits": 5,
+   "rate": 0.21739130434782608,
+   "overall_rate": 0.332,
+   "wilson_low": 0.09663978026586204,
+   "wilson_high": 0.4190348301626401,
+   "z": -1.1671433900775152,
+   "p_value": 0.24315246769988408
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-31"
+  },
+  "expect": {
+   "records": 18,
+   "hits": 3,
+   "rate": 0.16666666666666666,
+   "overall_rate": 0.332,
+   "wilson_low": 0.05836576805861446,
+   "wilson_high": 0.39222038103915735,
+   "z": -1.4894962056631578,
+   "p_value": 0.13635675175924847
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-32"
+  },
+  "expect": {
+   "records": 24,
+   "hits": 8,
+   "rate": 0.3333333333333333,
+   "overall_rate": 0.332,
+   "wilson_low": 0.17972190327297755,
+   "wilson_high": 0.5329368316186825,
+   "z": 0.013870339278976244,
+   "p_value": 0.9889334252802606
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-33"
+  },
+  "expect": {
+   "records": 15,
+   "hits": 5,
+   "rate": 0.3333333333333333,
+   "overall_rate": 0.332,
+   "wilson_low": 0.15176324439714725,
+   "wilson_high": 0.5828645226148023,
+   "z": 0.01096546601021564,
+   "p_value": 0.9912509993008725
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-34"
+  },
+  "expect": {
+   "records": 20,
+   "hits": 5,
+   "rate": 0.25,
+   "overall_rate": 0.332,
+   "wilson_low": 0.11186170140766571,
+   "wilson_high": 0.468700877618744,
+   "z": -0.7787025145929072,
+   "p_value": 0.43615497450369833
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-35"
+  },
+  "expect": {
+   "records": 13,
+   "hits": 2,
+   "rate": 0.15384615384615385,
+   "overall_rate": 0.332,
+   "wilson_low": 0.04325817835808121,
+   "wilson_high": 0.4223463101948254,
+   "z": -1.3639850360667605,
+   "p_value": 0.1725722753201141
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-36"
+  },
+  "expect": {
+   "records": 16,
+   "hits": 5,
+   "rate": 0.3125,
+   "overall_rate": 0.332,
+   "wilson_low": 0.14164643854782039,
+   "wilson_high": 0.5559564416525933,
+   "z": -0.1656293622397824,
+   "p_value": 0.8684486387111982
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-37"
+  },
+  "expect": {
+   "records": 24,
+   "hits": 7,
+   "rate": 0.2916666666666667,
+   "overall_rate": 0.332,
+   "wilson_low": 0.14914648196960867,
+   "wilson_high": 0.49167693664496637,
+   "z": -0.41957776318904266,
+   "p_value": 0.674793935731643
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-38"
+  },
+  "expect": {
+   "records": 24,
+   "hits": 3,
+   "rate": 0.125,
+   "overall_rate": 0.332,
+   "wilson_low": 0.04344334080123441,
+   "wilson_high": 0.3100388127050007,
+   "z": -2.15337017306112,
+   "p_value": 0.03128959779194483
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-39"
+  },
+  "expect": {
+   "records": 15,
+   "hits": 7,
+   "rate": 0.4666666666666667,
+   "overall_rate": 0.332,
+   "wilson_low": 0.24809535365737387,
+   "wilson_high": 0.698830199745016,
+   "z": 1.1075120670318093,
+   "p_value": 0.2680725980148677
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-4"
+  },
+  "expect": {
+   "records": 21,
+   "hits": 7,
+   "rate": 0.3333333333333333,
+   "overall_rate": 0.332,
+   "wilson_low": 0.1719475260508348,
+   "wilson_high": 0.5462654802574476,
+   "z": 0.012974514355060552,
+   "p_value": 0.9896481257486708
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-40"
+  },
+  "expect": {
+   "records": 19,
+   "hits": 7,
+   "rate": 0.3684210526315789,
+   "overall_rate": 0.332,
+   "wilson_low": 0.1914951274513508,
+   "wilson_high": 0.5896046683519693,
+   "z": 0.33711029908483175,
+   "p_value": 0.7360337538461228
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-41"
+  },
+  "expect": {
+   "records": 18,
+   "hits": 6,
+   "rate": 0.3333333333333333,
+   "overall_rate": 0.332,
+   "wilson_low": 0.16278774750833697,
+   "wilson_high": 0.5625053270405489,
+   "z": 0.012012066174702562,
+   "p_value": 0.9904159883354987
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-42"
+  },
+  "expect": {
+   "records": 16,
+   "hits": 8,
+   "rate": 0.5,
+   "overall_rate": 0.332,
+   "wilson_low": 0.27999563610326017,
+   "wilson_high": 0.7200043638967398,
+   "z": 1.4269606592965853,
+   "p_value": 0.15359123457872623
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-43"
+  },
+  "expect": {
+   "records": 28,
+   "hits": 12,
+   "rate": 0.42857142857142855,
+   "overall_rate": 0.332,
+   "wilson_low": 0.26508547124123705,
+   "wilson_high": 0.6092921437253124,
+   "z": 1.085101586639437,
+   "p_value": 0.27787666469116223
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-44"
+  },
+  "expect": {
+   "records": 18,
+   "hits": 7,
+   "rate": 0.3888888888888889,
+   "overall_rate": 0.332,
+   "wilson_low": 0.2030524657216362,
+   "wilson_high": 0.613809583977621,
+   "z": 0.5125148234539896,
+   "p_value": 0.6082907485390072
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-45"
+  },
+  "expect": {
+   "records": 20,
+   "hits": 9,
+   "rate": 0.45,
+   "overall_rate": 0.332,
+   "wilson_low": 0.25819785825562425,
+   "wilson_high": 0.6579146575496577,
+   "z": 1.1205719112434513,
+   "p_value": 0.2624701268548555
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-47"
+  },
+  "expect": {
+   "records": 26,
+   "hits": 6,
+   "rate": 0.23076923076923078,
+   "overall_rate": 0.332,
+   "wilson_low": 0.11033849405783291,
+   "wilson_high": 0.42051554078943687,
+   "z": -1.096079203857302,
+   "p_value": 0.2730441146141992
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-48"
+  },
+  "expect": {
+   "records": 19,
+   "hits": 11,
+   "rate": 0.5789473684210527,
+   "overall_rate": 0.332,
+   "wilson_low": 0.3627590353425504,
+   "wilson_high": 0.7685810871754576,
+   "z": 2.2857247446618962,
+   "p_value": 0.022270366694402573
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-49"
+  },
+  "expect": {
+   "records": 22,
+   "hits": 6,
+   "rate": 0.2727272727272727,
+   "overall_rate": 0.332,
+   "wilson_low": 0.1315076028798947,
+   "wilson_high": 0.4815173401240239,
+   "z": -0.590349198429154,
+   "p_value": 0.5549565617813348
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-5"
+  },
+  "expect": {
+   "records": 17,
+   "hits": 8,
+   "rate": 0.47058823529411764,
+   "overall_rate": 0.332,
+   "wilson_low": 0.26165106442409436,
+   "wilson_high": 0.6903676493999558,
+   "z": 1.2133708362702424,
+   "p_value": 0.22498807123261355
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-50"
+  },
+  "expect": {
+   "records": 21,
+   "hits": 6,
+   "rate": 0.2857142857142857,
+   "overall_rate": 0.332,
+   "wilson_low": 0.13813862952122136,
+   "wilson_high": 0.4995638071608559,
+   "z": -0.45040099832568586,
+   "p_value": 0.6524213252530708
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-6"
+  },
+  "expect": {
+   "records": 28,
+   "hits": 9,
+   "rate": 0.32142857142857145,
+   "overall_rate": 0.332,
+   "wilson_low": 0.17933246922494958,
+   "wilson_high": 0.5066115681914238,
+   "z": -0.11878330978005669,
+   "p_value": 0.9054470319242133
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-7"
+  },
+  "expect": {
+   "records": 25,
+   "hits": 6,
+   "rate": 0.24,
+   "overall_rate": 0.332,
+   "wilson_low": 0.11496313693401444,
+   "wilson_high": 0.4342968335542908,
+   "z": -0.9767885465423058,
+   "p_value": 0.32867384747100814
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-8"
+  },
+  "expect": {
+   "records": 20,
+   "hits": 13,
+   "rate": 0.65,
+   "overall_rate": 0.332,
+   "wilson_low": 0.4328542766852363,
+   "wilson_high": 0.8188081758989179,
+   "z": 3.01984633707981,
+   "p_value": 0.0025290296000161287
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Village Administrative Officer (VAO)','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "VAO-9"
+  },
+  "expect": {
+   "records": 28,
+   "hits": 13,
+   "rate": 0.4642857142857143,
+   "overall_rate": 0.332,
+   "wilson_low": 0.2953156998279538,
+   "wilson_high": 0.6418731076553209,
+   "z": 1.4863965521126021,
+   "p_value": 0.13717426127802396
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Coimbatore/Taluk-A"
+  },
+  "expect": {
+   "records": 44,
+   "hits": 18,
+   "rate": 0.4090909090909091,
+   "overall_rate": 0.332,
+   "wilson_low": 0.2768785562754973,
+   "wilson_high": 0.555902462589681,
+   "z": 1.0858559920636444,
+   "p_value": 0.2775427096181783
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Coimbatore/Taluk-B"
+  },
+  "expect": {
+   "records": 40,
+   "hits": 9,
+   "rate": 0.225,
+   "overall_rate": 0.332,
+   "wilson_low": 0.12316091323540745,
+   "wilson_high": 0.37503096742310016,
+   "z": -1.436999113652091,
+   "p_value": 0.15071824539688453
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Coimbatore/Taluk-C"
+  },
+  "expect": {
+   "records": 43,
+   "hits": 12,
+   "rate": 0.27906976744186046,
+   "overall_rate": 0.332,
+   "wilson_low": 0.16746613786237485,
+   "wilson_high": 0.4269102868187886,
+   "z": -0.7370225178796941,
+   "p_value": 0.46110865580785
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Coimbatore/Taluk-D"
+  },
+  "expect": {
+   "records": 54,
+   "hits": 21,
+   "rate": 0.3888888888888889,
+   "overall_rate": 0.332,
+   "wilson_low": 0.27041933829116493,
+   "wilson_high": 0.5221170146179231,
+   "z": 0.8877017138545032,
+   "p_value": 0.37470122376848924
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Erode/Taluk-A"
+  },
+  "expect": {
+   "records": 44,
+   "hits": 10,
+   "rate": 0.22727272727272727,
+   "overall_rate": 0.332,
+   "wilson_low": 0.12841947594917147,
+   "wilson_high": 0.3699235806463634,
+   "z": -1.4751251212940077,
+   "p_value": 0.14017890773976285
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Erode/Taluk-B"
+  },
+  "expect": {
+   "records": 67,
+   "hits": 21,
+   "rate": 0.31343283582089554,
+   "overall_rate": 0.332,
+   "wilson_low": 0.2150534825823772,
+   "wilson_high": 0.4320458231606459,
+   "z": -0.3227198699933424,
+   "p_value": 0.7469074025887257
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Erode/Taluk-C"
+  },
+  "expect": {
+   "records": 59,
+   "hits": 18,
+   "rate": 0.3050847457627119,
+   "overall_rate": 0.332,
+   "wilson_low": 0.20253631980116066,
+   "wilson_high": 0.43146326531945184,
+   "z": -0.4390027281891753,
+   "p_value": 0.6606595595156155
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Erode/Taluk-D"
+  },
+  "expect": {
+   "records": 46,
+   "hits": 15,
+   "rate": 0.32608695652173914,
+   "overall_rate": 0.332,
+   "wilson_low": 0.20865943309255652,
+   "wilson_high": 0.4703226758067758,
+   "z": -0.08515942396112147,
+   "p_value": 0.9321346483407469
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Madurai/Taluk-A"
+  },
+  "expect": {
+   "records": 47,
+   "hits": 12,
+   "rate": 0.2553191489361702,
+   "overall_rate": 0.332,
+   "wilson_low": 0.152531540350547,
+   "wilson_high": 0.3950817553041745,
+   "z": -1.1162939737913693,
+   "p_value": 0.2642963202800641
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Madurai/Taluk-B"
+  },
+  "expect": {
+   "records": 48,
+   "hits": 16,
+   "rate": 0.3333333333333333,
+   "overall_rate": 0.332,
+   "wilson_low": 0.21676780694818573,
+   "wilson_high": 0.4745989029405201,
+   "z": 0.019615621923044464,
+   "p_value": 0.98435000173864
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Madurai/Taluk-C"
+  },
+  "expect": {
+   "records": 50,
+   "hits": 15,
+   "rate": 0.3,
+   "overall_rate": 0.332,
+   "wilson_low": 0.1910355350088095,
+   "wilson_high": 0.4375035046445341,
+   "z": -0.48048264698811577,
+   "p_value": 0.6308842393884797
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Madurai/Taluk-D"
+  },
+  "expect": {
+   "records": 47,
+   "hits": 16,
+   "rate": 0.3404255319148936,
+   "overall_rate": 0.332,
+   "wilson_low": 0.22167443843771614,
+   "wilson_high": 0.48329075438058056,
+   "z": 0.12265605261414557,
+   "p_value": 0.9023794659357995
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Salem/Taluk-A"
+  },
+  "expect": {
+   "records": 63,
+   "hits": 18,
+   "rate": 0.2857142857142857,
+   "overall_rate": 0.332,
+   "wilson_low": 0.18903191986400808,
+   "wilson_high": 0.4070271656740712,
+   "z": -0.7801174128798327,
+   "p_value": 0.43532176793397104
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Salem/Taluk-B"
+  },
+  "expect": {
+   "records": 50,
+   "hits": 22,
+   "rate": 0.44,
+   "overall_rate": 0.332,
+   "wilson_low": 0.3116219921125717,
+   "wilson_high": 0.5769397197834314,
+   "z": 1.621628933584889,
+   "p_value": 0.10488282362130814
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Salem/Taluk-C"
+  },
+  "expect": {
+   "records": 45,
+   "hits": 20,
+   "rate": 0.4444444444444444,
+   "overall_rate": 0.332,
+   "wilson_low": 0.3093893003499758,
+   "wilson_high": 0.5882386550647896,
+   "z": 1.6017214324553284,
+   "p_value": 0.1092172235672564
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Salem/Taluk-D"
+  },
+  "expect": {
+   "records": 54,
+   "hits": 12,
+   "rate": 0.2222222222222222,
+   "overall_rate": 0.332,
+   "wilson_low": 0.13195416567633128,
+   "wilson_high": 0.3493867165963889,
+   "z": -1.7129869009536125,
+   "p_value": 0.08671494946737127
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Trichy/Taluk-A"
+  },
+  "expect": {
+   "records": 56,
+   "hits": 22,
+   "rate": 0.39285714285714285,
+   "overall_rate": 0.332,
+   "wilson_low": 0.2758041573011051,
+   "wilson_high": 0.5236659719957728,
+   "z": 0.9670485976938635,
+   "p_value": 0.33351973997143014
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Trichy/Taluk-B"
+  },
+  "expect": {
+   "records": 56,
+   "hits": 21,
+   "rate": 0.375,
+   "overall_rate": 0.332,
+   "wilson_low": 0.26010214326470893,
+   "wilson_high": 0.5059463409149819,
+   "z": 0.6832902063517674,
+   "p_value": 0.494423481469745
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Trichy/Taluk-C"
+  },
+  "expect": {
+   "records": 45,
+   "hits": 17,
+   "rate": 0.37777777777777777,
+   "overall_rate": 0.332,
+   "wilson_low": 0.2510808467213792,
+   "wilson_high": 0.5237006551911046,
+   "z": 0.6520842195371493,
+   "p_value": 0.5143468435084972
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','District,Taluk','Record Status=Under Dispute',null,10) YIELD *",
+  "where": {
+   "group": "Trichy/Taluk-D"
+  },
+  "expect": {
+   "records": 42,
+   "hits": 17,
+   "rate": 0.40476190476190477,
+   "overall_rate": 0.332,
+   "wilson_low": 0.27042861147481334,
+   "wilson_high": 0.5550568724996064,
+   "z": 1.0013166359231778,
+   "p_value": 0.3166737526298218
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-1"
+  },
+  "expect": {
+   "records": 26,
+   "hits": 7,
+   "rate": 0.2692307692307692,
+   "overall_rate": 0.331,
+   "wilson_low": 0.13704448322018378,
+   "wilson_high": 0.46083040379176177,
+   "z": -0.6693169312411544,
+   "p_value": 0.5032933285756982
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-10"
+  },
+  "expect": {
+   "records": 47,
+   "hits": 20,
+   "rate": 0.425531914893617,
+   "overall_rate": 0.331,
+   "wilson_low": 0.29513628343679965,
+   "wilson_high": 0.5671808065450722,
+   "z": 1.3772105106184211,
+   "p_value": 0.16844717317485491
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-11"
+  },
+  "expect": {
+   "records": 39,
+   "hits": 10,
+   "rate": 0.2564102564102564,
+   "overall_rate": 0.331,
+   "wilson_low": 0.14568780540992587,
+   "wilson_high": 0.4108165592168397,
+   "z": -0.9898841307770961,
+   "p_value": 0.32223075691004366
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-12"
+  },
+  "expect": {
+   "records": 37,
+   "hits": 13,
+   "rate": 0.35135135135135137,
+   "overall_rate": 0.331,
+   "wilson_low": 0.21825607133927122,
+   "wilson_high": 0.5124097687744915,
+   "z": 0.2630674156782286,
+   "p_value": 0.7924986181435129
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-13"
+  },
+  "expect": {
+   "records": 35,
+   "hits": 14,
+   "rate": 0.4,
+   "overall_rate": 0.331,
+   "wilson_low": 0.25550728859380584,
+   "wilson_high": 0.5642729098710748,
+   "z": 0.8674731814355631,
+   "p_value": 0.38568279986394627
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-14"
+  },
+  "expect": {
+   "records": 53,
+   "hits": 17,
+   "rate": 0.32075471698113206,
+   "overall_rate": 0.331,
+   "wilson_low": 0.21092214079135074,
+   "wilson_high": 0.45481479850967377,
+   "z": -0.15850203373764785,
+   "p_value": 0.8740612182303051
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-15"
+  },
+  "expect": {
+   "records": 35,
+   "hits": 9,
+   "rate": 0.2571428571428571,
+   "overall_rate": 0.331,
+   "wilson_low": 0.14163027069060452,
+   "wilson_high": 0.4206930684383917,
+   "z": -0.9285375461742988,
+   "p_value": 0.35312880107400535
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-16"
+  },
+  "expect": {
+   "records": 31,
+   "hits": 14,
+   "rate": 0.45161290322580644,
+   "overall_rate": 0.331,
+   "wilson_low": 0.29161735980520015,
+   "wilson_high": 0.6222783236264549,
+   "z": 1.4270775117322911,
+   "p_value": 0.15355755374921629
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-17"
+  },
+  "expect": {
+   "records": 31,
+   "hits": 11,
+   "rate": 0.3548387096774194,
+   "overall_rate": 0.331,
+   "wilson_low": 0.211166590938654,
+   "wilson_high": 0.5305204593563112,
+   "z": 0.2820567748516083,
+   "p_value": 0.7778999767419986
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-18"
+  },
+  "expect": {
+   "records": 26,
+   "hits": 8,
+   "rate": 0.3076923076923077,
+   "overall_rate": 0.331,
+   "wilson_low": 0.16501315595463759,
+   "wilson_high": 0.49988258322198365,
+   "z": -0.25255670008227854,
+   "p_value": 0.8006107937253258
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-19"
+  },
+  "expect": {
+   "records": 36,
+   "hits": 12,
+   "rate": 0.3333333333333333,
+   "overall_rate": 0.331,
+   "wilson_low": 0.2021461882430531,
+   "wilson_high": 0.4966600212884348,
+   "z": 0.0297509597163592,
+   "p_value": 0.9762656699116963
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-2"
+  },
+  "expect": {
+   "records": 40,
+   "hits": 13,
+   "rate": 0.325,
+   "overall_rate": 0.331,
+   "wilson_low": 0.20084502231782703,
+   "wilson_high": 0.4798225381012233,
+   "z": -0.0806406816682402,
+   "p_value": 0.9357277122472643
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-20"
+  },
+  "expect": {
+   "records": 30,
+   "hits": 10,
+   "rate": 0.3333333333333333,
+   "overall_rate": 0.331,
+   "wilson_low": 0.19230498083676134,
+   "wilson_high": 0.5121994835545616,
+   "z": 0.02715878624012906,
+   "p_value": 0.9783330873861928
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-21"
+  },
+  "expect": {
+   "records": 30,
+   "hits": 9,
+   "rate": 0.3,
+   "overall_rate": 0.331,
+   "wilson_low": 0.16664748268243798,
+   "wilson_high": 0.47875787458714947,
+   "z": -0.36082387433314894,
+   "p_value": 0.7182311142909537
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-22"
+  },
+  "expect": {
+   "records": 40,
+   "hits": 17,
+   "rate": 0.425,
+   "overall_rate": 0.331,
+   "wilson_low": 0.28509392559950375,
+   "wilson_high": 0.5780493145800892,
+   "z": 1.263370679469095,
+   "p_value": 0.206455996229853
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-23"
+  },
+  "expect": {
+   "records": 36,
+   "hits": 14,
+   "rate": 0.3888888888888889,
+   "overall_rate": 0.331,
+   "wilson_low": 0.24784873065371,
+   "wilson_high": 0.5513554090339485,
+   "z": 0.7381071434392082,
+   "p_value": 0.46044934320247755
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-24"
+  },
+  "expect": {
+   "records": 30,
+   "hits": 9,
+   "rate": 0.3,
+   "overall_rate": 0.331,
+   "wilson_low": 0.16664748268243798,
+   "wilson_high": 0.47875787458714947,
+   "z": -0.36082387433314894,
+   "p_value": 0.7182311142909537
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-25"
+  },
+  "expect": {
+   "records": 28,
+   "hits": 12,
+   "rate": 0.42857142857142855,
+   "overall_rate": 0.331,
+   "wilson_low": 0.26508547124123705,
+   "wilson_high": 0.6092921437253124,
+   "z": 1.0971717669595313,
+   "p_value": 0.27256631252157615
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-26"
+  },
+  "expect": {
+   "records": 40,
+   "hits": 10,
+   "rate": 0.25,
+   "overall_rate": 0.331,
+   "wilson_low": 0.14187118639096302,
+   "wilson_high": 0.40193961420768026,
+   "z": -1.0886492025212422,
+   "p_value": 0.2763086105093786
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-27"
+  },
+  "expect": {
+   "records": 33,
+   "hits": 11,
+   "rate": 0.3333333333333333,
+   "overall_rate": 0.331,
+   "wilson_low": 0.1975022767922068,
+   "wilson_high": 0.5039210557219438,
+   "z": 0.028484375314209116,
+   "p_value": 0.9772758296666557
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-28"
+  },
+  "expect": {
+   "records": 27,
+   "hits": 12,
+   "rate": 0.4444444444444444,
+   "overall_rate": 0.331,
+   "wilson_low": 0.27585858177023004,
+   "wilson_high": 0.6268697548677552,
+   "z": 1.2526739869649028,
+   "p_value": 0.21032437660386727
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-29"
+  },
+  "expect": {
+   "records": 30,
+   "hits": 7,
+   "rate": 0.23333333333333334,
+   "overall_rate": 0.331,
+   "wilson_low": 0.11792388144489496,
+   "wilson_high": 0.40928326158122164,
+   "z": -1.136789195479705,
+   "p_value": 0.2556264211488064
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-3"
+  },
+  "expect": {
+   "records": 28,
+   "hits": 4,
+   "rate": 0.14285714285714285,
+   "overall_rate": 0.331,
+   "wilson_low": 0.05699005319749392,
+   "wilson_high": 0.31489802163525293,
+   "z": -2.1156298932440754,
+   "p_value": 0.03437629737255002
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-30"
+  },
+  "expect": {
+   "records": 31,
+   "hits": 10,
+   "rate": 0.3225806451612903,
+   "overall_rate": 0.331,
+   "wilson_low": 0.1856942656635917,
+   "wilson_high": 0.4985899069191435,
+   "z": -0.09961680410861974,
+   "p_value": 0.9206485524379183
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-4"
+  },
+  "expect": {
+   "records": 31,
+   "hits": 14,
+   "rate": 0.45161290322580644,
+   "overall_rate": 0.331,
+   "wilson_low": 0.29161735980520015,
+   "wilson_high": 0.6222783236264549,
+   "z": 1.4270775117322911,
+   "p_value": 0.15355755374921629
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-5"
+  },
+  "expect": {
+   "records": 37,
+   "hits": 11,
+   "rate": 0.2972972972972973,
+   "overall_rate": 0.331,
+   "wilson_low": 0.17489478649832013,
+   "wilson_high": 0.45783135911135653,
+   "z": -0.43565081985491505,
+   "p_value": 0.6630900929431799
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-6"
+  },
+  "expect": {
+   "records": 30,
+   "hits": 11,
+   "rate": 0.36666666666666664,
+   "overall_rate": 0.331,
+   "wilson_low": 0.21873920806100708,
+   "wilson_high": 0.5448643634520511,
+   "z": 0.41514144681340703,
+   "p_value": 0.6780383597531818
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-7"
+  },
+  "expect": {
+   "records": 27,
+   "hits": 10,
+   "rate": 0.37037037037037035,
+   "overall_rate": 0.331,
+   "wilson_low": 0.21532512960965602,
+   "wilson_high": 0.5577076558789762,
+   "z": 0.4347347202558573,
+   "p_value": 0.6637549933975767
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-8"
+  },
+  "expect": {
+   "records": 30,
+   "hits": 6,
+   "rate": 0.2,
+   "overall_rate": 0.331,
+   "wilson_low": 0.0950510717728987,
+   "wilson_high": 0.3730569641314825,
+   "z": -1.5247718560529828,
+   "p_value": 0.12731601197241504
+  }
+ },
+ {
+  "nql": "CALL land.hotspots('PARCEL','Revenue Inspector','Tahsildar Approval Status=Rejected',null,10) YIELD *",
+  "where": {
+   "group": "RI-9"
+  },
+  "expect": {
+   "records": 26,
+   "hits": 6,
+   "rate": 0.23076923076923078,
+   "overall_rate": 0.331,
+   "wilson_low": 0.11033849405783291,
+   "wilson_high": 0.42051554078943687,
+   "z": -1.0860771624000296,
+   "p_value": 0.27744485527276297
+  }
+ },
+ {
+  "nql": "CALL land.valuation('PARCEL','Market Value (INR)','Land Area (Acres)') YIELD *",
+  "where": {
+   "group": "ALL"
+  },
+  "expect": {
+   "records": 1000,
+   "excluded": 0,
+   "total_value": 1633915932.0,
+   "total_area": 5223.68,
+   "weighted_value_per_area": 312790.20384097035,
+   "median_value_per_area": 311895.7343269333,
+   "p25": 178628.81048414906,
+   "p75": 578018.5023917257,
+   "fence_low": 30687.82824915055,
+   "fence_high": 3364550.8141463567,
+   "outliers_low": 0,
+   "outliers_high": 11
+  }
+ },
+ {
+  "nql": "CALL land.valuation('PARCEL','Market Value (INR)','Land Area (Acres)','District') YIELD *",
+  "where": {
+   "group": "Coimbatore"
+  },
+  "expect": {
+   "records": 181,
+   "excluded": 0,
+   "total_value": 301256635.0,
+   "total_area": 976.78,
+   "weighted_value_per_area": 308418.1033600197,
+   "median_value_per_area": 295806.0377358491,
+   "p25": 187902.69058295956,
+   "p75": 545399.4382022471,
+   "fence_low": 37997.976311371785,
+   "fence_high": 2697038.9433599035,
+   "outliers_low": 1,
+   "outliers_high": 3
+  }
+ },
+ {
+  "nql": "CALL land.valuation('PARCEL','Market Value (INR)','Land Area (Acres)','District') YIELD *",
+  "where": {
+   "group": "Erode"
+  },
+  "expect": {
+   "records": 216,
+   "excluded": 0,
+   "total_value": 373188896.0,
+   "total_area": 1123.62,
+   "weighted_value_per_area": 332130.8769868817,
+   "median_value_per_area": 329338.92025405786,
+   "p25": 194667.73458326465,
+   "p75": 613383.057120164,
+   "fence_low": 34804.65022416972,
+   "fence_high": 3430745.299615715,
+   "outliers_low": 0,
+   "outliers_high": 3
+  }
+ },
+ {
+  "nql": "CALL land.valuation('PARCEL','Market Value (INR)','Land Area (Acres)','District') YIELD *",
+  "where": {
+   "group": "Madurai"
+  },
+  "expect": {
+   "records": 192,
+   "excluded": 0,
+   "total_value": 301220676.0,
+   "total_area": 1035.19,
+   "weighted_value_per_area": 290981.05275360076,
+   "median_value_per_area": 302705.954883824,
+   "p25": 167070.1388828885,
+   "p75": 512466.30599531153,
+   "fence_low": 31099.192282046184,
+   "fence_high": 2753055.968108387,
+   "outliers_low": 0,
+   "outliers_high": 2
+  }
+ },
+ {
+  "nql": "CALL land.valuation('PARCEL','Market Value (INR)','Land Area (Acres)','District') YIELD *",
+  "where": {
+   "group": "Salem"
+  },
+  "expect": {
+   "records": 212,
+   "excluded": 0,
+   "total_value": 350485875.0,
+   "total_area": 1027.24,
+   "weighted_value_per_area": 341191.8100930649,
+   "median_value_per_area": 346219.00218249427,
+   "p25": 181207.05240404455,
+   "p75": 650389.0126946215,
+   "fence_low": 26648.81771196116,
+   "fence_high": 4422525.501139599,
+   "outliers_low": 0,
+   "outliers_high": 0
+  }
+ },
+ {
+  "nql": "CALL land.valuation('PARCEL','Market Value (INR)','Land Area (Acres)','District') YIELD *",
+  "where": {
+   "group": "Trichy"
+  },
+  "expect": {
+   "records": 199,
+   "excluded": 0,
+   "total_value": 307763850.0,
+   "total_area": 1060.8500000000001,
+   "weighted_value_per_area": 290110.61884338025,
+   "median_value_per_area": 286820.12738853507,
+   "p25": 161392.68866388546,
+   "p75": 537569.7035719696,
+   "fence_low": 26549.568344283474,
+   "fence_high": 3267842.9524225695,
+   "outliers_low": 0,
+   "outliers_high": 1
+  }
+ },
+ {
+  "nql": "CALL land.valuation('PARCEL','Market Value (INR)','Land Area (Acres)','Usage Type') YIELD *",
+  "where": {
+   "group": "Agricultural"
+  },
+  "expect": {
+   "records": 321,
+   "excluded": 0,
+   "total_value": 517087912.0,
+   "total_area": 1637.09,
+   "weighted_value_per_area": 315857.9626043773,
+   "median_value_per_area": 300585.01683501684,
+   "p25": 196977.19594594586,
+   "p75": 545399.4382022471,
+   "fence_low": 42753.12332838822,
+   "fence_high": 2512828.154855257,
+   "outliers_low": 2,
+   "outliers_high": 6
+  }
+ },
+ {
+  "nql": "CALL land.valuation('PARCEL','Market Value (INR)','Land Area (Acres)','Usage Type') YIELD *",
+  "where": {
+   "group": "Commercial"
+  },
+  "expect": {
+   "records": 345,
+   "excluded": 0,
+   "total_value": 564757625.0,
+   "total_area": 1798.88,
+   "weighted_value_per_area": 313949.5825180112,
+   "median_value_per_area": 311361.36363636365,
+   "p25": 175421.87088274048,
+   "p75": 592830.3687635569,
+   "fence_low": 28236.683220530005,
+   "fence_high": 3682989.6625038562,
+   "outliers_low": 0,
+   "outliers_high": 2
+  }
+ },
+ {
+  "nql": "CALL land.valuation('PARCEL','Market Value (INR)','Land Area (Acres)','Usage Type') YIELD *",
+  "where": {
+   "group": "Residential"
+  },
+  "expect": {
+   "records": 334,
+   "excluded": 0,
+   "total_value": 552070395.0,
+   "total_area": 1787.71,
+   "weighted_value_per_area": 308814.29034910584,
+   "median_value_per_area": 329033.26085199666,
+   "p25": 167383.08839202652,
+   "p75": 596983.3600589877,
+   "fence_low": 24850.526984255775,
+   "fence_high": 4021038.209315661,
+   "outliers_low": 0,
+   "outliers_high": 2
+  }
+ },
+ {
+  "nql": "CALL land.survey_check('PARCEL','Survey Number','Sub Division') YIELD *",
+  "where": {
+   "group": "ALL"
+  },
+  "expect": {
+   "records": 1000,
+   "malformed": 0,
+   "without_subdivision": 0,
+   "suffix_matches": 183,
+   "suffix_differs": 817,
+   "differs_rate": 0.817
+  }
+ },
+ {
+  "nql": "CALL land.survey_check('PARCEL','Survey Number','Sub Division','District') YIELD *",
+  "where": {
+   "group": "Coimbatore"
+  },
+  "expect": {
+   "records": 181,
+   "malformed": 0,
+   "without_subdivision": 0,
+   "suffix_matches": 30,
+   "suffix_differs": 151,
+   "differs_rate": 0.8342541436464088
+  }
+ },
+ {
+  "nql": "CALL land.survey_check('PARCEL','Survey Number','Sub Division','District') YIELD *",
+  "where": {
+   "group": "Erode"
+  },
+  "expect": {
+   "records": 216,
+   "malformed": 0,
+   "without_subdivision": 0,
+   "suffix_matches": 32,
+   "suffix_differs": 184,
+   "differs_rate": 0.8518518518518519
+  }
+ },
+ {
+  "nql": "CALL land.survey_check('PARCEL','Survey Number','Sub Division','District') YIELD *",
+  "where": {
+   "group": "Madurai"
+  },
+  "expect": {
+   "records": 192,
+   "malformed": 0,
+   "without_subdivision": 0,
+   "suffix_matches": 40,
+   "suffix_differs": 152,
+   "differs_rate": 0.7916666666666666
+  }
+ },
+ {
+  "nql": "CALL land.survey_check('PARCEL','Survey Number','Sub Division','District') YIELD *",
+  "where": {
+   "group": "Salem"
+  },
+  "expect": {
+   "records": 212,
+   "malformed": 0,
+   "without_subdivision": 0,
+   "suffix_matches": 39,
+   "suffix_differs": 173,
+   "differs_rate": 0.8160377358490566
+  }
+ },
+ {
+  "nql": "CALL land.survey_check('PARCEL','Survey Number','Sub Division','District') YIELD *",
+  "where": {
+   "group": "Trichy"
+  },
+  "expect": {
+   "records": 199,
+   "malformed": 0,
+   "without_subdivision": 0,
+   "suffix_matches": 42,
+   "suffix_differs": 157,
+   "differs_rate": 0.7889447236180904
+  }
+ }
+]

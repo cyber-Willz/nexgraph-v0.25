@@ -1,0 +1,8 @@
+### g01_components_top
+CALL algo.components() YIELD node, component RETURN component, count(*) AS size ORDER BY size DESC LIMIT 3;
+### g01b_components_n
+CALL algo.components() YIELD node, component RETURN count(DISTINCT component) AS comps;
+### g03_pagerank_top
+CALL algo.pagerank() YIELD node, score RETURN node, score ORDER BY score DESC LIMIT 3;
+### g04_tx_per_wallet
+MATCH HYPEREDGE h:TxRisk RETURN count(*) AS n;

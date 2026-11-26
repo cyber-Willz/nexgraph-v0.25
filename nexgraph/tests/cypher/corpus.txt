@@ -1,0 +1,59 @@
+MATCH (p:Person) RETURN p.name ORDER BY p.name
+MATCH (p:Person) WHERE p.age > 30 RETURN p.name, p.age ORDER BY p.age DESC LIMIT 2
+MATCH (p:Person)-[:ACTED_IN]->(m:Movie) RETURN m.title, count(p) AS n ORDER BY n DESC, m.title
+MATCH (p:Person)-[r:ACTED_IN]->(m:Movie) WHERE r.role = 'Neo' RETURN p.name
+MATCH (a:Person)-[:KNOWS*1..2]->(b:Person) RETURN DISTINCT b.name ORDER BY b.name
+MATCH (p:Person) WHERE p.name IN ['Ada','Cy'] RETURN p.name ORDER BY p.name
+MATCH (p:Person) WHERE p.name STARTS WITH 'A' RETURN p.name
+MATCH (p:Person) WHERE p.email IS NULL RETURN count(*) AS n
+MATCH (p:Person) WHERE p.age IS NOT NULL RETURN count(*) AS n
+MATCH (p:Person) WHERE NOT p.age < 30 RETURN p.name ORDER BY p.name
+MATCH (p:Person) RETURN toLower(p.name) AS n ORDER BY n
+MATCH (p:Person) RETURN toUpper(p.name) AS n ORDER BY n
+MATCH (p:Person) RETURN toString(p.age) AS s ORDER BY s
+MATCH (p:Person) RETURN toInteger('42') AS i LIMIT 1
+MATCH (p:Person) RETURN abs(p.age - 100) AS d ORDER BY d LIMIT 1
+MATCH (p:Person) RETURN round(p.age / 7.0) AS r ORDER BY r LIMIT 1
+MATCH (p:Person) RETURN substring(p.name, 0, 2) AS s ORDER BY s LIMIT 1
+MATCH (p:Person) RETURN p.name + ' (' + toString(p.age) + ')' AS s ORDER BY s LIMIT 1
+MATCH (p:Person) RETURN CASE WHEN p.age >= 40 THEN 'old' ELSE 'young' END AS g, count(*) AS n ORDER BY g
+MATCH (p:Person) RETURN avg(p.age) AS a, min(p.age) AS lo, max(p.age) AS hi, sum(p.age) AS s
+MATCH (p:Person) RETURN collect(p.name) AS names
+MATCH (p:Person) WITH p.age > 35 AS senior, count(*) AS n RETURN senior, n ORDER BY senior
+MATCH (p:Person) WITH p ORDER BY p.age DESC LIMIT 2 RETURN p.name
+MATCH (p:Person) OPTIONAL MATCH (p)-[:ACTED_IN]->(m:Movie) RETURN p.name, count(m) AS n ORDER BY p.name
+UNWIND [1,2,3] AS x RETURN x * 2 AS y
+UNWIND ['Ada','Zed'] AS n MATCH (p:Person {name: n}) RETURN p.name
+MERGE (p:Person {name: 'Ada'}) RETURN p.name
+MERGE (p:Person {name: 'New'}) ON CREATE SET p.age = 1 ON MATCH SET p.age = 2 RETURN p.age
+MATCH (p:Person {name:'Ada'}) SET p.age = p.age + 1 RETURN p.age
+MATCH (p:Person {name:'Ada'}) SET p += {city: 'Belize', x: 1} RETURN p.city
+MATCH (p:Person {name:'Ada'}) REMOVE p.x RETURN p.name
+MATCH (p:Person {name:'Ada'}) SET p:Admin RETURN labels(p)
+MATCH (p:Person) RETURN p.name AS n UNION MATCH (m:Movie) RETURN m.title AS n
+MATCH (p:Person) WHERE EXISTS { (p)-[:ACTED_IN]->() } RETURN p.name ORDER BY p.name
+MATCH (p:Person) WHERE exists(p.age) RETURN count(*) AS n
+MATCH path = (a:Person {name:'Ada'})-[:KNOWS*]->(b) RETURN length(path) AS l ORDER BY l LIMIT 1
+MATCH (p:Person) RETURN p.name, size((p)-[:ACTED_IN]->()) AS n ORDER BY p.name
+MATCH (p:Person) RETURN [x IN [1,2,3] WHERE x > 1 | x * 2] AS l LIMIT 1
+MATCH (p:Person) RETURN range(1, 3) AS r LIMIT 1
+MATCH (p:Person) RETURN head(collect(p.name)) AS first
+MATCH (p:Person) RETURN p.name ORDER BY p.name SKIP 1 LIMIT 1
+MATCH (p:Person) RETURN count(DISTINCT p.age) AS n
+MATCH (p:Person) RETURN id(p) AS i LIMIT 1
+MATCH (a)-[r]->(b) RETURN type(r) AS t, count(*) AS n ORDER BY t
+MATCH (a)--(b) RETURN count(*) AS n
+MATCH (a:Person)-[:KNOWS]-(b:Person) RETURN count(*) AS n
+MATCH (a:Person {name:'Ada'}) DETACH DELETE a
+MATCH (p:Person) RETURN p ORDER BY p.name LIMIT 1
+MATCH (p:Person) RETURN properties(p) AS props LIMIT 1
+MATCH (p:Person) RETURN keys(p) AS k LIMIT 1
+RETURN 1 + 2 AS x
+RETURN date('2026-01-02') AS d
+RETURN timestamp() AS t
+RETURN split('a,b,c', ',') AS parts
+RETURN replace('abc', 'b', 'x') AS r
+RETURN trim('  x ') AS t
+RETURN 7 % 3 AS m, 2 ^ 3 AS p
+CREATE INDEX person_name FOR (p:Person) ON (p.name)
+CREATE CONSTRAINT person_unique FOR (p:Person) REQUIRE p.name IS UNIQUE

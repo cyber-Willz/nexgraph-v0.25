@@ -1,0 +1,2 @@
+## D3_long_lstm_sup :: --seeds 4 --steps 1500 --delay-min 50 --delay-max 90 --model lstm
+connectome            17.62    1.062   0.431   36.0 +- 27.3         2/4       56%    138.7

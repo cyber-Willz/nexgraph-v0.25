@@ -1,0 +1,2 @@
+## D1_long_rnn_sup :: --seeds 4 --steps 1500 --delay-min 50 --delay-max 90
+connectome            17.62    1.062   0.431   90.2 +- 1.6          4/4       94%     47.7

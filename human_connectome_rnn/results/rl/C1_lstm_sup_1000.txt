@@ -1,0 +1,2 @@
+## C1_lstm_sup_1000 :: --seeds 4 --steps 1000 --model lstm
+connectome            17.62    1.062   0.431    4.2 +- 0.9          0/4       62%     58.0

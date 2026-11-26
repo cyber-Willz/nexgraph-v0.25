@@ -1,0 +1,44 @@
+### c01_heist_count
+MATCH (n:Heist) RETURN count(*) AS n;
+### c02_heistbyaddr_count
+MATCH (n:HeistByAddr) RETURN count(*) AS n;
+### c03_account_count
+MATCH (n:Account) RETURN count(*) AS n;
+### c04_account_both
+MATCH (a:Account) WHERE a.is_fraud IS NOT NULL AND a.flag IS NOT NULL RETURN count(*) AS n, sum(CASE WHEN a.is_fraud = a.flag THEN 1 ELSE 0 END) AS agree;
+### c05_heist_by_label
+MATCH (n:Heist) RETURN n.label AS label, count(*) AS n, sum(n.income_btc) AS income, avg(n.length) AS avg_len ORDER BY n DESC LIMIT 6;
+### c06_heist_split_ransom
+MATCH (n:Heist) RETURN n.split AS split, sum(n.is_ransomware) AS ransom, count(*) AS n ORDER BY split;
+### c07_scamtx_by_chain
+MATCH (n:ScamTx) RETURN n.blockchain AS chain, count(*) AS n, sum(n.is_scam) AS scams, avg(n.transaction_amount_usd) AS mean_amt ORDER BY chain;
+### c08_msg_by_type
+MATCH (n:Msg) RETURN n.scam_type AS t, count(*) AS n, avg(n.promised_return_pct) AS mean_ret ORDER BY t;
+### c09_txrisk_rows
+MATCH HYPEREDGE h:TxRisk RETURN count(*) AS n, sum(h.risk_label) AS risky, avg(h.transaction_amount) AS mean_amt;
+### c10_payment_rows
+MATCH HYPEREDGE h:Payment RETURN count(*) AS n, sum(h.fraud_label) AS fraud, avg(h.transaction_amount) AS mean_amt;
+### c11_payment_by_loc
+MATCH HYPEREDGE h:Payment RETURN h.device_location AS loc, count(*) AS n, sum(h.fraud_label) AS fraud ORDER BY n DESC, loc LIMIT 5;
+### c12_wallet_nodes
+MATCH (w:Wallet) RETURN count(*) AS n;
+### c13_user_nodes
+MATCH (w:User) RETURN count(*) AS n;
+### s01_describe_income
+CALL stats.describe('Heist','income_btc');
+### s02_corr_len_income
+CALL stats.correlation('Heist','length','income_btc');
+### s03_hist_log_income
+CALL stats.histogram('Heist','log10_income',8);
+### s04_outliers_income
+CALL stats.outliers('Heist','income_btc',3.5) YIELD value, robust_z RETURN count(*) AS n, max(value) AS max_value;
+### s05_ts_scamtx
+CALL stats.timeseries('ScamTx','timestamp',2592000,'transaction_amount_usd') YIELD bucket_start, count RETURN count(*) AS buckets, sum(count) AS total;
+### s06_ts_daily_date_string
+CALL stats.timeseries('Daily','date',86400,'transactions');
+### s07_describe_daily_tx
+CALL stats.describe('Daily','transactions');
+### g01_components
+CALL algo.components() YIELD component, size RETURN count(*) AS comps, max(size) AS largest;
+### g02_wallet_degree
+CALL algo.degree() YIELD node, neighbours RETURN neighbours AS wallets_txs, count(*) AS n ORDER BY wallets_txs DESC LIMIT 5;

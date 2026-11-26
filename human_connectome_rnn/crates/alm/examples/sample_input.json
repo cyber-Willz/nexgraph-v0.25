@@ -1,0 +1,376 @@
+{
+  "curve": {
+    "tenors": [
+      0.08333333333333333,
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      3.0,
+      5.0,
+      7.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "zeros": [
+      0.0405,
+      0.041,
+      0.0412,
+      0.04,
+      0.0385,
+      0.0382,
+      0.039,
+      0.0405,
+      0.042,
+      0.045,
+      0.0445
+    ]
+  },
+  "balance_sheet": {
+    "name": "Sample community bank (USD m, fictional)",
+    "currency": "USD",
+    "instruments": [
+      {
+        "id": "cash_reserves",
+        "side": "Asset",
+        "kind": {
+          "type": "Floating",
+          "reset_months": 1,
+          "spread": -0.003
+        },
+        "balance": 80.0,
+        "rate": 0.041,
+        "term_months": 1,
+        "reinvest_term_months": null,
+        "category": "cash",
+        "counterparty": "central_bank",
+        "hqla": "L1",
+        "runoff_rate": 0.0,
+        "inflow_factor": 0.5,
+        "tradable": true,
+        "trade_cost": null,
+        "min_balance": 30.0,
+        "max_balance": 200.0
+      },
+      {
+        "id": "gov_bond_3y",
+        "side": "Asset",
+        "kind": {
+          "type": "FixedBullet"
+        },
+        "balance": 120.0,
+        "rate": 0.0405,
+        "term_months": 36,
+        "reinvest_term_months": null,
+        "category": "securities",
+        "counterparty": "sovereign",
+        "hqla": "L1",
+        "runoff_rate": 0.0,
+        "inflow_factor": 0.5,
+        "tradable": true,
+        "trade_cost": null,
+        "min_balance": 0.0,
+        "max_balance": 300.0
+      },
+      {
+        "id": "gov_bond_10y",
+        "side": "Asset",
+        "kind": {
+          "type": "FixedBullet"
+        },
+        "balance": 60.0,
+        "rate": 0.043,
+        "term_months": 120,
+        "reinvest_term_months": null,
+        "category": "securities",
+        "counterparty": "sovereign",
+        "hqla": "L1",
+        "runoff_rate": 0.0,
+        "inflow_factor": 0.5,
+        "tradable": true,
+        "trade_cost": null,
+        "min_balance": 0.0,
+        "max_balance": 200.0
+      },
+      {
+        "id": "corp_bonds_5y",
+        "side": "Asset",
+        "kind": {
+          "type": "FixedBullet"
+        },
+        "balance": 40.0,
+        "rate": 0.052,
+        "term_months": 60,
+        "reinvest_term_months": null,
+        "category": "securities",
+        "counterparty": "corporate",
+        "hqla": "L2A",
+        "runoff_rate": 0.0,
+        "inflow_factor": 0.5,
+        "tradable": false,
+        "trade_cost": null,
+        "min_balance": null,
+        "max_balance": null
+      },
+      {
+        "id": "resi_mortgages",
+        "side": "Asset",
+        "kind": {
+          "type": "Amortizing"
+        },
+        "balance": 330.0,
+        "rate": 0.0615,
+        "term_months": 300,
+        "reinvest_term_months": null,
+        "category": "mortgage",
+        "counterparty": "household",
+        "hqla": null,
+        "runoff_rate": 0.0,
+        "inflow_factor": 0.5,
+        "tradable": false,
+        "trade_cost": null,
+        "min_balance": null,
+        "max_balance": null
+      },
+      {
+        "id": "cre_loans_floating",
+        "side": "Asset",
+        "kind": {
+          "type": "Floating",
+          "reset_months": 6,
+          "spread": 0.03
+        },
+        "balance": 200.0,
+        "rate": 0.0725,
+        "term_months": 84,
+        "reinvest_term_months": null,
+        "category": "cre",
+        "counterparty": "corporate_re",
+        "hqla": null,
+        "runoff_rate": 0.0,
+        "inflow_factor": 0.5,
+        "tradable": false,
+        "trade_cost": null,
+        "min_balance": null,
+        "max_balance": null
+      },
+      {
+        "id": "consumer_loans",
+        "side": "Asset",
+        "kind": {
+          "type": "Amortizing"
+        },
+        "balance": 90.0,
+        "rate": 0.095,
+        "term_months": 48,
+        "reinvest_term_months": null,
+        "category": "consumer",
+        "counterparty": "household",
+        "hqla": null,
+        "runoff_rate": 0.0,
+        "inflow_factor": 0.5,
+        "tradable": false,
+        "trade_cost": null,
+        "min_balance": null,
+        "max_balance": null
+      },
+      {
+        "id": "sme_loans_fixed",
+        "side": "Asset",
+        "kind": {
+          "type": "FixedBullet"
+        },
+        "balance": 80.0,
+        "rate": 0.078,
+        "term_months": 36,
+        "reinvest_term_months": null,
+        "category": "sme",
+        "counterparty": "corporate",
+        "hqla": null,
+        "runoff_rate": 0.0,
+        "inflow_factor": 0.5,
+        "tradable": false,
+        "trade_cost": null,
+        "min_balance": null,
+        "max_balance": null
+      },
+      {
+        "id": "demand_deposits",
+        "side": "Liability",
+        "kind": {
+          "type": "NonMaturity",
+          "decay_monthly": 0.015,
+          "beta": 0.1,
+          "floor": 0.0
+        },
+        "balance": 250.0,
+        "rate": 0.005,
+        "term_months": 0,
+        "reinvest_term_months": null,
+        "category": "deposit_demand",
+        "counterparty": "",
+        "hqla": null,
+        "runoff_rate": 0.1,
+        "inflow_factor": 0.5,
+        "tradable": false,
+        "trade_cost": null,
+        "min_balance": null,
+        "max_balance": null
+      },
+      {
+        "id": "savings_deposits",
+        "side": "Liability",
+        "kind": {
+          "type": "NonMaturity",
+          "decay_monthly": 0.02,
+          "beta": 0.45,
+          "floor": 0.002
+        },
+        "balance": 240.0,
+        "rate": 0.022,
+        "term_months": 0,
+        "reinvest_term_months": null,
+        "category": "deposit_savings",
+        "counterparty": "",
+        "hqla": null,
+        "runoff_rate": 0.1,
+        "inflow_factor": 0.5,
+        "tradable": false,
+        "trade_cost": null,
+        "min_balance": null,
+        "max_balance": null
+      },
+      {
+        "id": "term_deposits_12m",
+        "side": "Liability",
+        "kind": {
+          "type": "FixedBullet"
+        },
+        "balance": 170.0,
+        "rate": 0.0385,
+        "term_months": 12,
+        "reinvest_term_months": null,
+        "category": "deposit_term",
+        "counterparty": "",
+        "hqla": null,
+        "runoff_rate": 0.05,
+        "inflow_factor": 0.5,
+        "tradable": false,
+        "trade_cost": null,
+        "min_balance": null,
+        "max_balance": null
+      },
+      {
+        "id": "term_deposits_24m",
+        "side": "Liability",
+        "kind": {
+          "type": "FixedBullet"
+        },
+        "balance": 70.0,
+        "rate": 0.041,
+        "term_months": 24,
+        "reinvest_term_months": null,
+        "category": "deposit_term",
+        "counterparty": "",
+        "hqla": null,
+        "runoff_rate": 0.0,
+        "inflow_factor": 0.5,
+        "tradable": false,
+        "trade_cost": null,
+        "min_balance": null,
+        "max_balance": null
+      },
+      {
+        "id": "corporate_deposits",
+        "side": "Liability",
+        "kind": {
+          "type": "NonMaturity",
+          "decay_monthly": 0.03,
+          "beta": 0.6,
+          "floor": 0.0
+        },
+        "balance": 90.0,
+        "rate": 0.018,
+        "term_months": 0,
+        "reinvest_term_months": null,
+        "category": "deposit_corporate",
+        "counterparty": "corporate",
+        "hqla": null,
+        "runoff_rate": 0.4,
+        "inflow_factor": 0.5,
+        "tradable": false,
+        "trade_cost": null,
+        "min_balance": null,
+        "max_balance": null
+      },
+      {
+        "id": "wholesale_6m",
+        "side": "Liability",
+        "kind": {
+          "type": "FixedBullet"
+        },
+        "balance": 60.0,
+        "rate": 0.045,
+        "term_months": 6,
+        "reinvest_term_months": null,
+        "category": "wholesale",
+        "counterparty": "interbank",
+        "hqla": null,
+        "runoff_rate": 0.25,
+        "inflow_factor": 0.5,
+        "tradable": true,
+        "trade_cost": null,
+        "min_balance": 0.0,
+        "max_balance": 150.0
+      },
+      {
+        "id": "sub_debt_5y",
+        "side": "Liability",
+        "kind": {
+          "type": "FixedBullet"
+        },
+        "balance": 30.0,
+        "rate": 0.075,
+        "term_months": 60,
+        "reinvest_term_months": null,
+        "category": "capital_debt",
+        "counterparty": "investors",
+        "hqla": null,
+        "runoff_rate": 0.0,
+        "inflow_factor": 0.5,
+        "tradable": false,
+        "trade_cost": null,
+        "min_balance": null,
+        "max_balance": null
+      }
+    ]
+  },
+  "limits": {
+    "max_eve_loss_pct_equity": 0.15,
+    "max_nii_loss_pct": 0.1,
+    "min_lcr": 1.0,
+    "max_abs_duration_gap_years": 2.0,
+    "max_contagion_radius": 0.85,
+    "max_funding_hhi": 0.35
+  },
+  "shocks": {
+    "parallel_bp": 200.0,
+    "short_bp": 250.0,
+    "long_bp": 100.0
+  },
+  "config": {
+    "horizon_months": 480,
+    "nii_horizon_months": 12,
+    "constant_balance_sheet": true,
+    "calibrate_to_book": true,
+    "rate_floor": 0.0,
+    "spectral": {
+      "clusters": 3,
+      "connect_weight": 0.01,
+      "coupling": 0.6,
+      "arnoldi_dim": 40,
+      "seed": 7
+    }
+  }
+}
