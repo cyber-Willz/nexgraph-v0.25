@@ -67,15 +67,4 @@ Kuzu, FalkorDB and SQL engine capability cells are from general knowledge and we
 - PostgreSQL and SQLite shortest path used the first 10 of the 55 pairs.
 - Only the workloads in the existing harness were run (no writes under concurrency, no vector or spectral comparison).
 
-## Reproduce
 
-```
-python3 bench/gen_data.py DATA 100000 1000000
-cargo run --release --features server --example bench_compare -- DATA nexgraph.json
-python3 -I bench/run_kuzu.py DATA kuzu.json
-python3 run_sql.py {duckdb|pg|sqlite} DATA out.json     # PATHN=10 limits shortest-path pairs
-python3 run_falkor.py DATA falkor.json
-python3 bench/compare.py nexgraph.json kuzu.json
-```
-
-`run_sql.py`, `run_falkor.py` and `common.py` were written for this report (not part of the archive).
